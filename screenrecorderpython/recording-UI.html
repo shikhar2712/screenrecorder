@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recording UI</title>
+</head>
+<body>
+  <img src="logo.png" alt="Logo" width="100" height="100">
+  <button id="startButton">Start Recording</button>
+  <button id="stopButton" disabled>Stop Recording</button>
+
+  <script>
+    // Get references to the start and stop buttons
+    const startButton = document.getElementById('startButton');
+    const stopButton = document.getElementById('stopButton');
+
+    // Add event listeners to the buttons
+    startButton.addEventListener('click', startRecording);
+    stopButton.addEventListener('click', stopRecording);
+
+    let isRecording = false; // Track the recording state
+
+    // Function to handle the start recording button click
+    function startRecording() {
+      if (isRecording) {
+        // Already recording, do nothing
+        return;
+      }
+
+      // Disable start button and enable stop button
+      startButton.disabled = true;
+      stopButton.disabled = false;
+
+      // TODO: Start recording logic goes here
+      // Call your screen recorder program's start recording function
+      startRecordingFunction();
+
+      isRecording = true; // Set the recording state to true
+    }
+
+    // Function to handle the stop recording button click
+    function stopRecording() {
+      if (!isRecording) {
+        // Not recording, do nothing
+        return;
+      }
+
+      // Disable stop button and enable start button
+      stopButton.disabled = true;
+      startButton.disabled = false;
+
+      // TODO: Stop recording logic goes here
+      // Call your screen recorder program's stop recording function
+      stopRecordingFunction();
+
+      isRecording = false; // Set the recording state to false
+    }
+
+    // Simulated functions for starting and stopping recording
+    function startRecordingFunction() {
+      console.log('Recording started');
+      // TODO: Replace with your actual start recording code
+    }
+
+    function stopRecordingFunction() {
+      console.log('Recording stopped');
+      // TODO: Replace with your actual stop recording code
+    }
+  </script>
+</body>
+</html>
